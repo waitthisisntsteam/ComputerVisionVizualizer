@@ -56,7 +56,16 @@ namespace ComputerVisionVizualizer
 
         private void NewTabButton_Click(object sender, EventArgs e)
         {
-            TabControl.TabPages.Add(new TabPage("new tab"));
+            TabControl.TabPages.Add(new TabPage(TabName.Text));
+        }
+
+        private void CloseTabButton_Click(object sender, EventArgs e)
+        {
+            int removedIndex = 0;
+
+
+
+            TabControl.TabPages.Remove(TabControl.TabPages[removedIndex]);
         }
     }
 }

@@ -42,6 +42,8 @@
             originalPicture = new Emgu.CV.UI.ImageBox();
             TabControl = new TabControl();
             tableLayoutPanel1 = new TableLayoutPanel();
+            TabName = new TextBox();
+            CloseTabButton = new Button();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)updatedPicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)originalPicture).BeginInit();
@@ -172,14 +174,35 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(NewTabButton, 0, 0);
+            tableLayoutPanel1.Controls.Add(TabName, 0, 1);
+            tableLayoutPanel1.Controls.Add(CloseTabButton, 0, 2);
             tableLayoutPanel1.Location = new Point(10, 12);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(77, 426);
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(77, 128);
             tableLayoutPanel1.TabIndex = 1;
+            // 
+            // TabName
+            // 
+            TabName.Location = new Point(3, 33);
+            TabName.Name = "TabName";
+            TabName.Size = new Size(71, 23);
+            TabName.TabIndex = 2;
+            // 
+            // CloseTabButton
+            // 
+            CloseTabButton.Location = new Point(3, 63);
+            CloseTabButton.Name = "CloseTabButton";
+            CloseTabButton.Size = new Size(71, 23);
+            CloseTabButton.TabIndex = 1;
+            CloseTabButton.Text = "Close Tab";
+            CloseTabButton.UseVisualStyleBackColor = true;
+            CloseTabButton.Click += CloseTabButton_Click;
             // 
             // Form1
             // 
@@ -196,6 +219,7 @@
             ((System.ComponentModel.ISupportInitialize)originalPicture).EndInit();
             TabControl.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -213,5 +237,7 @@
         private Emgu.CV.UI.ImageBox originalPicture;
         private TabControl TabControl;
         private TableLayoutPanel tableLayoutPanel1;
+        private Button CloseTabButton;
+        private TextBox TabName;
     }
 }
