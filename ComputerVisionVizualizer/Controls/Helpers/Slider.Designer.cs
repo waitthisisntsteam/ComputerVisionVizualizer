@@ -28,10 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            label1 = new Label();
+            Increment = new NumericUpDown();
+            Bar = new TrackBar();
+            ((System.ComponentModel.ISupportInitialize)Increment).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Bar).BeginInit();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 14);
+            label1.Name = "label1";
+            label1.Size = new Size(35, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Label";
+            // 
+            // Increment
+            // 
+            Increment.Location = new Point(69, 12);
+            Increment.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
+            Increment.Name = "Increment";
+            Increment.Size = new Size(47, 23);
+            Increment.TabIndex = 1;
+            Increment.ValueChanged += Increment_ValueChanged;
+            // 
+            // Bar
+            // 
+            Bar.Location = new Point(12, 41);
+            Bar.Maximum = 255;
+            Bar.Name = "Bar";
+            Bar.Size = new Size(170, 45);
+            Bar.TabIndex = 2;
+            Bar.Scroll += Bar_Scroll;
+            // 
+            // Slider
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(Bar);
+            Controls.Add(Increment);
+            Controls.Add(label1);
+            Name = "Slider";
+            Size = new Size(200, 90);
+            ((System.ComponentModel.ISupportInitialize)Increment).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Bar).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
+        private NumericUpDown Increment;
+        private TrackBar Bar;
     }
 }

@@ -16,5 +16,15 @@ namespace ComputerVisionVizualizer.Controls.Helpers
         {
             InitializeComponent();
         }
+
+        private void Increment_ValueChanged(object sender, EventArgs e)
+        {
+            Bar.Value = (int)Increment.Value;
+        }
+
+        private void Bar_Scroll(object sender, EventArgs e)
+        {
+            Increment.Value = Bar.Value;
+        }
     }
 }
