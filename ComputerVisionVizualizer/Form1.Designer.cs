@@ -1,6 +1,6 @@
 ﻿namespace ComputerVisionVizualizer
 {
-    partial class Form1
+    partial class CvVisualizer
     {
         /// <summary>
         ///  Required designer variable.
@@ -121,15 +121,15 @@
             CloseTabButton.UseVisualStyleBackColor = true;
             CloseTabButton.Click += CloseTabButton_Click;
             // 
-            // Form1
+            // CvVisualizer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(948, 536);
             Controls.Add(buttonList);
             Controls.Add(tabs);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "CvVisualizer";
+            Text = "CvVisualizer";
             tabs.ResumeLayout(false);
             buttonList.ResumeLayout(false);
             buttonList.PerformLayout();

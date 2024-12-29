@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace ComputerVisionVizualizer
 {
-    public partial class Form1 : Form
+    public partial class CvVisualizer : Form
     {
         private void AddOperation<T>(T control) where T : CVIOBase
             => tabs.TabPages[tabs.SelectedIndex].Controls
@@ -13,7 +13,7 @@ namespace ComputerVisionVizualizer
                                                         .First()
                                                         .Controls.Add(control);
 
-        public Form1()
+        public CvVisualizer()
         {
             InitializeComponent();
 
@@ -53,9 +53,6 @@ namespace ComputerVisionVizualizer
             tablePanel.Controls.Add(new Transformaion());
         }
 
-        private void TabName_TextChanged(object sender, EventArgs e)
-        {
-            tabs.TabPages[tabs.SelectedIndex].Text = TabName.Text;
-        }
+        private void TabName_TextChanged(object sender, EventArgs e) => tabs.TabPages[tabs.SelectedIndex].Text = TabName.Text;
     }
 }

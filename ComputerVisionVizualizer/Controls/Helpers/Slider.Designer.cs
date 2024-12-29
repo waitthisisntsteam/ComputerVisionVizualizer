@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            SliderName = new Label();
             Increment = new NumericUpDown();
             Bar = new TrackBar();
             ((System.ComponentModel.ISupportInitialize)Increment).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Bar).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // SliderName
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 14);
-            label1.Name = "label1";
-            label1.Size = new Size(35, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Label";
+            SliderName.AutoSize = true;
+            SliderName.Location = new Point(12, 14);
+            SliderName.Name = "SliderName";
+            SliderName.Size = new Size(42, 15);
+            SliderName.TabIndex = 0;
+            SliderName.Text = "Name:";
             // 
             // Increment
             // 
@@ -68,9 +68,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(Bar);
             Controls.Add(Increment);
-            Controls.Add(label1);
+            Controls.Add(SliderName);
             Name = "Slider";
-            Size = new Size(200, 90);
+            Size = new Size(200, 74);
             ((System.ComponentModel.ISupportInitialize)Increment).EndInit();
             ((System.ComponentModel.ISupportInitialize)Bar).EndInit();
             ResumeLayout(false);
@@ -79,7 +79,7 @@
 
         #endregion
 
-        private Label label1;
+        private Label SliderName;
         private NumericUpDown Increment;
         private TrackBar Bar;
     }

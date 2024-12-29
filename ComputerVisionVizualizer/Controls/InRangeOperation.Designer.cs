@@ -28,31 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            InputPicture = new Emgu.CV.UI.ImageBox();
             Min1 = new Helpers.Slider();
             Min2 = new Helpers.Slider();
             Min3 = new Helpers.Slider();
-            InputPictureSelector = new ComboBox();
             Max3 = new Helpers.Slider();
             Max2 = new Helpers.Slider();
             Max1 = new Helpers.Slider();
-            OutputPicture = new Emgu.CV.UI.ImageBox();
-            OutputPictureName = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)InputPicture).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)OutputPicture).BeginInit();
+            ConvertToSelector = new ComboBox();
+            Transformation = new Label();
+            ConvertFromSelector = new ComboBox();
+            InputImage = new Helpers.InputImage();
+            OutputImage = new Helpers.OutputImage();
             SuspendLayout();
-            // 
-            // InputPicture
-            // 
-            InputPicture.BorderStyle = BorderStyle.FixedSingle;
-            InputPicture.Location = new Point(86, 46);
-            InputPicture.Name = "InputPicture";
-            InputPicture.Size = new Size(100, 100);
-            InputPicture.SizeMode = PictureBoxSizeMode.StretchImage;
-            InputPicture.TabIndex = 2;
-            InputPicture.TabStop = false;
-            InputPicture.Click += InputPicture_Click;
             // 
             // Min1
             // 
@@ -75,14 +62,6 @@
             Min3.Size = new Size(200, 90);
             Min3.TabIndex = 5;
             // 
-            // InputPictureSelector
-            // 
-            InputPictureSelector.FormattingEnabled = true;
-            InputPictureSelector.Location = new Point(86, 17);
-            InputPictureSelector.Name = "InputPictureSelector";
-            InputPictureSelector.Size = new Size(100, 23);
-            InputPictureSelector.TabIndex = 6;
-            // 
             // Max3
             // 
             Max3.Location = new Point(330, 292);
@@ -104,57 +83,79 @@
             Max1.Size = new Size(200, 90);
             Max1.TabIndex = 8;
             // 
-            // OutputPicture
+            // ConvertToSelector
             // 
-            OutputPicture.BorderStyle = BorderStyle.FixedSingle;
-            OutputPicture.Location = new Point(376, 46);
-            OutputPicture.Name = "OutputPicture";
-            OutputPicture.Size = new Size(100, 100);
-            OutputPicture.SizeMode = PictureBoxSizeMode.StretchImage;
-            OutputPicture.TabIndex = 7;
-            OutputPicture.TabStop = false;
+            ConvertToSelector.FormattingEnabled = true;
+            ConvertToSelector.Location = new Point(245, 108);
+            ConvertToSelector.Name = "ConvertToSelector";
+            ConvertToSelector.Size = new Size(68, 23);
+            ConvertToSelector.TabIndex = 14;
             // 
-            // OutputPictureName
+            // Transformation
             // 
-            OutputPictureName.Location = new Point(376, 17);
-            OutputPictureName.Name = "OutputPictureName";
-            OutputPictureName.Size = new Size(100, 23);
-            OutputPictureName.TabIndex = 11;
-            OutputPictureName.TextChanged += OutputPictureName_TextChanged;
+            Transformation.AutoSize = true;
+            Transformation.Location = new Point(268, 90);
+            Transformation.Name = "Transformation";
+            Transformation.Size = new Size(18, 15);
+            Transformation.TabIndex = 13;
+            Transformation.Text = "to";
+            // 
+            // ConvertFromSelector
+            // 
+            ConvertFromSelector.FormattingEnabled = true;
+            ConvertFromSelector.Location = new Point(245, 64);
+            ConvertFromSelector.Name = "ConvertFromSelector";
+            ConvertFromSelector.Size = new Size(68, 23);
+            ConvertFromSelector.TabIndex = 12;
+            // 
+            // InputImage
+            // 
+            InputImage.Location = new Point(79, 17);
+            InputImage.Name = "InputImage";
+            InputImage.Size = new Size(106, 137);
+            InputImage.TabIndex = 15;
+            // 
+            // OutputImage
+            // 
+            OutputImage.Location = new Point(370, 17);
+            OutputImage.Name = "OutputImage";
+            OutputImage.Size = new Size(106, 137);
+            OutputImage.TabIndex = 16;
             // 
             // InRangeOperation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(OutputPictureName);
+            BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(OutputImage);
+            Controls.Add(InputImage);
+            Controls.Add(ConvertToSelector);
+            Controls.Add(Transformation);
+            Controls.Add(ConvertFromSelector);
             Controls.Add(Max3);
             Controls.Add(Max2);
             Controls.Add(Max1);
-            Controls.Add(OutputPicture);
-            Controls.Add(InputPictureSelector);
             Controls.Add(Min3);
             Controls.Add(Min2);
             Controls.Add(Min1);
-            Controls.Add(InputPicture);
             Name = "InRangeOperation";
-            Size = new Size(555, 380);
-            ((System.ComponentModel.ISupportInitialize)InputPicture).EndInit();
-            ((System.ComponentModel.ISupportInitialize)OutputPicture).EndInit();
+            Size = new Size(553, 378);
+            Load += InRangeOperation_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Emgu.CV.UI.ImageBox InputPicture;
         private Helpers.Slider Min1;
         private Helpers.Slider Min2;
         private Helpers.Slider Min3;
-        private ComboBox InputPictureSelector;
         private Helpers.Slider Max3;
         private Helpers.Slider Max2;
         private Helpers.Slider Max1;
-        private Emgu.CV.UI.ImageBox OutputPicture;
-        private TextBox OutputPictureName;
+        private ComboBox ConvertToSelector;
+        private Label Transformation;
+        private ComboBox ConvertFromSelector;
+        private Helpers.InputImage InputImage;
+        private Helpers.OutputImage OutputImage;
     }
 }
