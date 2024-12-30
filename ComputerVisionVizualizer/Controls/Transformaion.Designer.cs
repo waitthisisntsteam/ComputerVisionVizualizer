@@ -31,17 +31,17 @@
             components = new System.ComponentModel.Container();
             FactorLabel = new Label();
             FactorText = new TextBox();
-            SavePictureButton = new Button();
             RotateButton = new Button();
-            ImportPictureButton = new Button();
-            updatedPicture = new Emgu.CV.UI.ImageBox();
-            originalPicture = new Emgu.CV.UI.ImageBox();
             ResizeBar = new TrackBar();
             ResizeLabel = new Label();
             ROIButton = new Button();
+            SavePictureButton = new Button();
+            updatedPicture = new Emgu.CV.UI.ImageBox();
+            ImportPictureButton = new Button();
+            originalPicture = new Emgu.CV.UI.ImageBox();
+            ((System.ComponentModel.ISupportInitialize)ResizeBar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)updatedPicture).BeginInit();
             ((System.ComponentModel.ISupportInitialize)originalPicture).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ResizeBar).BeginInit();
             SuspendLayout();
             // 
             // FactorLabel
@@ -60,55 +60,15 @@
             FactorText.Size = new Size(100, 23);
             FactorText.TabIndex = 16;
             // 
-            // SavePictureButton
-            // 
-            SavePictureButton.Location = new Point(475, 302);
-            SavePictureButton.Name = "SavePictureButton";
-            SavePictureButton.Size = new Size(100, 23);
-            SavePictureButton.TabIndex = 14;
-            SavePictureButton.Text = "Save Picture";
-            SavePictureButton.UseVisualStyleBackColor = true;
-            SavePictureButton.Click += SavePictureButton_Click;
-            // 
             // RotateButton
             // 
             RotateButton.Location = new Point(218, 342);
             RotateButton.Name = "RotateButton";
             RotateButton.Size = new Size(75, 23);
             RotateButton.TabIndex = 13;
-            RotateButton.Text = "Rotate";
+            RotateButton.Text = "Rotate 90°";
             RotateButton.UseVisualStyleBackColor = true;
             RotateButton.Click += RotateButton_Click;
-            // 
-            // ImportPictureButton
-            // 
-            ImportPictureButton.Location = new Point(125, 302);
-            ImportPictureButton.Name = "ImportPictureButton";
-            ImportPictureButton.Size = new Size(102, 23);
-            ImportPictureButton.TabIndex = 12;
-            ImportPictureButton.Text = "Import Picture";
-            ImportPictureButton.UseVisualStyleBackColor = true;
-            ImportPictureButton.Click += ImportPictureButton_Click;
-            // 
-            // updatedPicture
-            // 
-            updatedPicture.BorderStyle = BorderStyle.FixedSingle;
-            updatedPicture.Location = new Point(394, 46);
-            updatedPicture.Name = "updatedPicture";
-            updatedPicture.Size = new Size(250, 250);
-            updatedPicture.SizeMode = PictureBoxSizeMode.CenterImage;
-            updatedPicture.TabIndex = 11;
-            updatedPicture.TabStop = false;
-            // 
-            // originalPicture
-            // 
-            originalPicture.BorderStyle = BorderStyle.FixedSingle;
-            originalPicture.Location = new Point(55, 46);
-            originalPicture.Name = "originalPicture";
-            originalPicture.Size = new Size(250, 250);
-            originalPicture.SizeMode = PictureBoxSizeMode.CenterImage;
-            originalPicture.TabIndex = 10;
-            originalPicture.TabStop = false;
             // 
             // ResizeBar
             // 
@@ -137,6 +97,46 @@
             ROIButton.UseVisualStyleBackColor = true;
             ROIButton.Click += ROIButton_Click;
             // 
+            // SavePictureButton
+            // 
+            SavePictureButton.Location = new Point(475, 302);
+            SavePictureButton.Name = "SavePictureButton";
+            SavePictureButton.Size = new Size(100, 23);
+            SavePictureButton.TabIndex = 14;
+            SavePictureButton.Text = "Save Picture";
+            SavePictureButton.UseVisualStyleBackColor = true;
+            SavePictureButton.Click += SavePictureButton_Click;
+            // 
+            // updatedPicture
+            // 
+            updatedPicture.BorderStyle = BorderStyle.FixedSingle;
+            updatedPicture.Location = new Point(394, 46);
+            updatedPicture.Name = "updatedPicture";
+            updatedPicture.Size = new Size(250, 250);
+            updatedPicture.SizeMode = PictureBoxSizeMode.CenterImage;
+            updatedPicture.TabIndex = 11;
+            updatedPicture.TabStop = false;
+            // 
+            // ImportPictureButton
+            // 
+            ImportPictureButton.Location = new Point(125, 302);
+            ImportPictureButton.Name = "ImportPictureButton";
+            ImportPictureButton.Size = new Size(102, 23);
+            ImportPictureButton.TabIndex = 12;
+            ImportPictureButton.Text = "Import Picture";
+            ImportPictureButton.UseVisualStyleBackColor = true;
+            ImportPictureButton.Click += ImportPictureButton_Click;
+            // 
+            // originalPicture
+            // 
+            originalPicture.BorderStyle = BorderStyle.FixedSingle;
+            originalPicture.Location = new Point(55, 46);
+            originalPicture.Name = "originalPicture";
+            originalPicture.Size = new Size(250, 250);
+            originalPicture.SizeMode = PictureBoxSizeMode.CenterImage;
+            originalPicture.TabIndex = 10;
+            originalPicture.TabStop = false;
+            // 
             // Transformaion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -155,9 +155,9 @@
             Name = "Transformaion";
             Size = new Size(690, 430);
             Load += Transformaion_Load;
+            ((System.ComponentModel.ISupportInitialize)ResizeBar).EndInit();
             ((System.ComponentModel.ISupportInitialize)updatedPicture).EndInit();
             ((System.ComponentModel.ISupportInitialize)originalPicture).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ResizeBar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -166,13 +166,13 @@
 
         private Label FactorLabel;
         private TextBox FactorText;
-        private Button SavePictureButton;
         private Button RotateButton;
-        private Button ImportPictureButton;
-        private Emgu.CV.UI.ImageBox updatedPicture;
-        private Emgu.CV.UI.ImageBox originalPicture;
         private TrackBar ResizeBar;
         private Label ResizeLabel;
         private Button ROIButton;
+        private Button SavePictureButton;
+        private Emgu.CV.UI.ImageBox updatedPicture;
+        private Button ImportPictureButton;
+        private Emgu.CV.UI.ImageBox originalPicture;
     }
 }

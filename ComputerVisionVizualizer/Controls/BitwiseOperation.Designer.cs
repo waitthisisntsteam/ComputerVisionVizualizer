@@ -28,44 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BitwiseOperation));
-            InputPictureOne = new Emgu.CV.UI.ImageBox();
-            InputPictureTwo = new Emgu.CV.UI.ImageBox();
             BitwiseOperatorSelect = new ComboBox();
-            OutputImage = new Emgu.CV.UI.ImageBox();
             Output = new Label();
-            InputPictureOneSelect = new ComboBox();
-            InputPictureTwoSelect = new ComboBox();
-            OutputPictureName = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)InputPictureOne).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)InputPictureTwo).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)OutputImage).BeginInit();
+            InputImageOne = new Helpers.InputImage();
+            InputImageTwo = new Helpers.InputImage();
+            OutputImage = new Helpers.OutputImage();
             SuspendLayout();
-            // 
-            // InputPictureOne
-            // 
-            InputPictureOne.BorderStyle = BorderStyle.FixedSingle;
-            InputPictureOne.InitialImage = (Image)resources.GetObject("InputPictureOne.InitialImage");
-            InputPictureOne.Location = new Point(40, 40);
-            InputPictureOne.Name = "InputPictureOne";
-            InputPictureOne.Size = new Size(100, 100);
-            InputPictureOne.SizeMode = PictureBoxSizeMode.StretchImage;
-            InputPictureOne.TabIndex = 2;
-            InputPictureOne.TabStop = false;
-            InputPictureOne.Click += InputPictureOne_Click;
-            // 
-            // InputPictureTwo
-            // 
-            InputPictureTwo.BorderStyle = BorderStyle.FixedSingle;
-            InputPictureTwo.InitialImage = (Image)resources.GetObject("InputPictureTwo.InitialImage");
-            InputPictureTwo.Location = new Point(235, 40);
-            InputPictureTwo.Name = "InputPictureTwo";
-            InputPictureTwo.Size = new Size(100, 100);
-            InputPictureTwo.SizeMode = PictureBoxSizeMode.StretchImage;
-            InputPictureTwo.TabIndex = 3;
-            InputPictureTwo.TabStop = false;
-            InputPictureTwo.Click += InputPictureTwo_Click;
             // 
             // BitwiseOperatorSelect
             // 
@@ -76,17 +44,6 @@
             BitwiseOperatorSelect.TabIndex = 4;
             BitwiseOperatorSelect.SelectedIndexChanged += BitwiseOperatorSelect_SelectedIndexChanged;
             // 
-            // OutputImage
-            // 
-            OutputImage.BorderStyle = BorderStyle.FixedSingle;
-            OutputImage.InitialImage = (Image)resources.GetObject("OutputImage.InitialImage");
-            OutputImage.Location = new Point(362, 40);
-            OutputImage.Name = "OutputImage";
-            OutputImage.Size = new Size(100, 100);
-            OutputImage.SizeMode = PictureBoxSizeMode.StretchImage;
-            OutputImage.TabIndex = 5;
-            OutputImage.TabStop = false;
-            // 
             // Output
             // 
             Output.AutoSize = true;
@@ -96,64 +53,48 @@
             Output.TabIndex = 6;
             Output.Text = "=";
             // 
-            // InputPictureOneSelect
+            // InputImageOne
             // 
-            InputPictureOneSelect.FormattingEnabled = true;
-            InputPictureOneSelect.Location = new Point(40, 11);
-            InputPictureOneSelect.Name = "InputPictureOneSelect";
-            InputPictureOneSelect.Size = new Size(100, 23);
-            InputPictureOneSelect.TabIndex = 7;
-            InputPictureOneSelect.SelectedIndexChanged += InputPictureOneSelect_SelectedIndexChanged;
+            InputImageOne.Location = new Point(34, 11);
+            InputImageOne.Name = "InputImageOne";
+            InputImageOne.Size = new Size(106, 137);
+            InputImageOne.TabIndex = 10;
             // 
-            // InputPictureTwoSelect
+            // InputImageTwo
             // 
-            InputPictureTwoSelect.FormattingEnabled = true;
-            InputPictureTwoSelect.Location = new Point(235, 11);
-            InputPictureTwoSelect.Name = "InputPictureTwoSelect";
-            InputPictureTwoSelect.Size = new Size(100, 23);
-            InputPictureTwoSelect.TabIndex = 8;
-            InputPictureTwoSelect.SelectedIndexChanged += InputPictureTwoSelect_SelectedIndexChanged;
+            InputImageTwo.Location = new Point(235, 10);
+            InputImageTwo.Name = "InputImageTwo";
+            InputImageTwo.Size = new Size(106, 137);
+            InputImageTwo.TabIndex = 11;
             // 
-            // OutputPictureName
+            // OutputImage
             // 
-            OutputPictureName.Location = new Point(362, 11);
-            OutputPictureName.Name = "OutputPictureName";
-            OutputPictureName.Size = new Size(100, 23);
-            OutputPictureName.TabIndex = 9;
-            OutputPictureName.TextChanged += OutputImageName_TextChanged;
+            OutputImage.Location = new Point(362, 10);
+            OutputImage.Name = "OutputImage";
+            OutputImage.Size = new Size(106, 137);
+            OutputImage.TabIndex = 12;
             // 
             // BitwiseOperation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BorderStyle = BorderStyle.FixedSingle;
-            Controls.Add(OutputPictureName);
-            Controls.Add(InputPictureTwoSelect);
-            Controls.Add(InputPictureOneSelect);
-            Controls.Add(Output);
             Controls.Add(OutputImage);
+            Controls.Add(InputImageTwo);
+            Controls.Add(InputImageOne);
+            Controls.Add(Output);
             Controls.Add(BitwiseOperatorSelect);
-            Controls.Add(InputPictureTwo);
-            Controls.Add(InputPictureOne);
             Name = "BitwiseOperation";
             Size = new Size(500, 150);
-            Load += BitwiseOperation_Load;
-            ((System.ComponentModel.ISupportInitialize)InputPictureOne).EndInit();
-            ((System.ComponentModel.ISupportInitialize)InputPictureTwo).EndInit();
-            ((System.ComponentModel.ISupportInitialize)OutputImage).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Emgu.CV.UI.ImageBox InputPictureOne;
-        private Emgu.CV.UI.ImageBox InputPictureTwo;
         private ComboBox BitwiseOperatorSelect;
-        private Emgu.CV.UI.ImageBox OutputImage;
         private Label Output;
-        private ComboBox InputPictureOneSelect;
-        private ComboBox InputPictureTwoSelect;
-        private TextBox OutputPictureName;
+        private Helpers.InputImage InputImageOne;
+        private Helpers.InputImage InputImageTwo;
+        private Helpers.OutputImage OutputImage;
     }
 }

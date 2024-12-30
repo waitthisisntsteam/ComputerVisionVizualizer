@@ -31,7 +31,7 @@ namespace ComputerVisionVizualizer.Controls
         //    }
         //}
 
-        private void Convert()
+        private void Convert(object sender, EventArgs e)
         {
             if (InputImage.GetImage() != null)
             {
@@ -52,46 +52,24 @@ namespace ComputerVisionVizualizer.Controls
 
         private void InRangeOperation_Load(object sender, EventArgs e)
         {
-            List<Item> convertFrom = [
-            new Item() { Text = "RGB", Value = 0 },
-            new Item() { Text = "BGR", Value = 1 },
-            new Item() { Text = "HSV", Value = 2 },
-            new Item() { Text = "Grayscale", Value = 3 }
-            ];
-
-            ConvertFromSelector.DataSource = convertFrom;
-            ConvertFromSelector.DisplayMember = "Text";
-            ConvertFromSelector.ValueMember = "Value";
-
-            List<Item> convertTo = [
-            new Item() { Text = "RGB", Value = 0 },
-            new Item() { Text = "BGR", Value = 1 },
-            new Item() { Text = "HSV", Value = 2 },
-            new Item() { Text = "Grayscale", Value = 3 }
-            ];
-
-            ConvertToSelector.DataSource = convertTo;
-            ConvertToSelector.DisplayMember = "Text";
-            ConvertToSelector.ValueMember = "Value";
-
-            Min1.SetName("Min R:");
+            Min1.SetName("Min B:");
             Min2.SetName("Min G:");
-            Min3.SetName("Min B:");
+            Min3.SetName("Min R:");
 
-            Max1.SetName("Max R:");
-            Max2.SetName("Max G:");
-            Max3.SetName("Max B:");
+            Max1.SetName("Max H:");
+            Max2.SetName("Max S:");
+            Max3.SetName("Max V:");
 
 
-            Min1.SliderChanged += ValueChanged;
-            Min2.SliderChanged += ValueChanged;
-            Min3.SliderChanged += ValueChanged;
+            Min1.SliderChanged += Convert;
+            Min2.SliderChanged += Convert;
+            Min3.SliderChanged += Convert;
 
-            Max1.SliderChanged += ValueChanged;
-            Max2.SliderChanged += ValueChanged;
-            Max3.SliderChanged += ValueChanged;
+            Max1.SliderChanged += Convert;
+            Max2.SliderChanged += Convert;
+            Max3.SliderChanged += Convert;
+
+            InputImage.ImageSubmitted += Convert;
         }
-
-        private void ValueChanged(object sender, EventArgs e) => Convert();
     }
 }

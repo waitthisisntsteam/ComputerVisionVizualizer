@@ -13,6 +13,8 @@ namespace ComputerVisionVizualizer.Controls.Helpers
 {
     public partial class InputImage : UserControl
     {
+        public EventHandler ImageSubmitted;
+
         public InputImage()
         {
             InitializeComponent();
@@ -25,7 +27,11 @@ namespace ComputerVisionVizualizer.Controls.Helpers
             OpenFileDialog fileDirectory = new OpenFileDialog();
             var file = fileDirectory.ShowDialog();
 
-            if (file == DialogResult.OK || file == DialogResult.Yes) InputPictureBox.DisplayedImage = new Mat(fileDirectory.FileName);
+            if (file == DialogResult.OK || file == DialogResult.Yes)
+            {
+                InputPictureBox.DisplayedImage = new Mat(fileDirectory.FileName);
+                ImageSubmitted?.Invoke(this, e);
+            }
         }
 
         private void InputPictureSelector_SelectedIndexChanged(object sender, EventArgs e)

@@ -20,10 +20,16 @@ namespace ComputerVisionVizualizer.Controls
             SizeBar.SliderChanged += Blur;
             SizeBar.SetName("Size:");
             SizeBar.SetValue(1);
-            SizeBar.SetMin(2);
-            SizeBar.SetMax(10);
-            SizeBar.SetTickIncrement(2);
+            SizeBar.SetMin(1);
+            SizeBar.SetMax(50);
+            SizeBar.SetTickIncrement(1);
 
+            SigmaBar.SliderChanged += Blur;
+            SigmaBar.SetName("Sigma:");
+            SigmaBar.SetMin(0);
+            SigmaBar.SetMax(50);
+
+            InputImage.ImageSubmitted += Blur;
 
             List<Item> blurOptions = [
             new Item() { Text = "Gaussian", Value = 0 },
@@ -37,12 +43,15 @@ namespace ComputerVisionVizualizer.Controls
 
         private void Blur(object sender, EventArgs e)
         {
-            if (InputImage.GetImage() != null)
-            {
-                Mat output = new();
+            int size = SizeBar.GetValue();
+            int sigma = SigmaBar.GetValue();
 
-                if (BlurSelector.Text == "Gaussian") CvInvoke.GaussianBlur(InputImage.GetImage(), output, new Size(SizeBar.GetValue(), SizeBar.GetValue()), 0);
-                else if (BlurSelector.Text == "Median") CvInvoke.MedianBlur(InputImage.GetImage(), output, SizeBar.GetValue());
+            if (InputImage.GetImage() != null && size % 2 == 1)
+            {
+                using Mat output = new();
+
+                if (BlurSelector.Text == "Gaussian") CvInvoke.GaussianBlur(InputImage.GetImage(), output, new Size(size, size), sigma);
+                else if (BlurSelector.Text == "Median") CvInvoke.MedianBlur(InputImage.GetImage(), output, size);
 
                 OutputImage.SetImage(output);
             }

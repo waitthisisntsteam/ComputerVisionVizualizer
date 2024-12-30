@@ -1,6 +1,6 @@
 ﻿namespace ComputerVisionVizualizer.Controls
 {
-    partial class BlurOperation
+    partial class Contours
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,9 +30,10 @@
         {
             InputImage = new Helpers.InputImage();
             OutputImage = new Helpers.OutputImage();
-            BlurSelector = new ComboBox();
-            SizeBar = new Helpers.Slider();
-            SigmaBar = new Helpers.Slider();
+            ThicknessBar = new Helpers.Slider();
+            BBar = new Helpers.Slider();
+            GBar = new Helpers.Slider();
+            RBar = new Helpers.Slider();
             SuspendLayout();
             // 
             // InputImage
@@ -44,45 +45,52 @@
             // 
             // OutputImage
             // 
-            OutputImage.Location = new Point(215, 3);
+            OutputImage.Location = new Point(223, 3);
             OutputImage.Name = "OutputImage";
             OutputImage.Size = new Size(106, 137);
             OutputImage.TabIndex = 1;
             // 
-            // BlurSelector
+            // ThicknessBar
             // 
-            BlurSelector.FormattingEnabled = true;
-            BlurSelector.Location = new Point(115, 72);
-            BlurSelector.Name = "BlurSelector";
-            BlurSelector.Size = new Size(94, 23);
-            BlurSelector.TabIndex = 2;
+            ThicknessBar.Location = new Point(74, 146);
+            ThicknessBar.Name = "ThicknessBar";
+            ThicknessBar.Size = new Size(200, 74);
+            ThicknessBar.TabIndex = 2;
             // 
-            // SizeBar
+            // BBar
             // 
-            SizeBar.Location = new Point(76, 143);
-            SizeBar.Name = "SizeBar";
-            SizeBar.Size = new Size(200, 74);
-            SizeBar.TabIndex = 3;
+            BBar.Location = new Point(74, 215);
+            BBar.Name = "BBar";
+            BBar.Size = new Size(200, 74);
+            BBar.TabIndex = 3;
             // 
-            // SigmaBar
+            // GBar
             // 
-            SigmaBar.Location = new Point(76, 223);
-            SigmaBar.Name = "SigmaBar";
-            SigmaBar.Size = new Size(200, 74);
-            SigmaBar.TabIndex = 4;
+            GBar.Location = new Point(74, 284);
+            GBar.Name = "GBar";
+            GBar.Size = new Size(200, 74);
+            GBar.TabIndex = 4;
             // 
-            // BlurOperation
+            // RBar
+            // 
+            RBar.Location = new Point(74, 352);
+            RBar.Name = "RBar";
+            RBar.Size = new Size(200, 74);
+            RBar.TabIndex = 5;
+            // 
+            // Contours
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BorderStyle = BorderStyle.FixedSingle;
-            Controls.Add(SigmaBar);
-            Controls.Add(SizeBar);
-            Controls.Add(BlurSelector);
+            Controls.Add(RBar);
+            Controls.Add(GBar);
+            Controls.Add(BBar);
+            Controls.Add(ThicknessBar);
             Controls.Add(OutputImage);
             Controls.Add(InputImage);
-            Name = "BlurOperation";
-            Size = new Size(324, 301);
+            Name = "Contours";
+            Size = new Size(330, 422);
             ResumeLayout(false);
         }
 
@@ -90,8 +98,9 @@
 
         private Helpers.InputImage InputImage;
         private Helpers.OutputImage OutputImage;
-        private ComboBox BlurSelector;
-        private Helpers.Slider SizeBar;
-        private Helpers.Slider SigmaBar;
+        private Helpers.Slider ThicknessBar;
+        private Helpers.Slider BBar;
+        private Helpers.Slider GBar;
+        private Helpers.Slider RBar;
     }
 }
