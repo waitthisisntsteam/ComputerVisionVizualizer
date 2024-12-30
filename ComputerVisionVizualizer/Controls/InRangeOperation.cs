@@ -44,7 +44,7 @@ namespace ComputerVisionVizualizer.Controls
                                  new ScalarArray(new Emgu.CV.Structure.MCvScalar(Max1.GetValue(),
                                                                                  Max2.GetValue(),
                                                                                  Max3.GetValue())),
-                                output);
+                                 output);
 
                 OutputImage.SetImage(output);
             }

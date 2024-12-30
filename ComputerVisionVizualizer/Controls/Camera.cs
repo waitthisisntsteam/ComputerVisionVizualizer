@@ -1,4 +1,5 @@
 ﻿using Emgu.CV;
+using Emgu.CV.CvEnum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,11 @@ namespace ComputerVisionVizualizer.Controls
             InitializeComponent();
 
             Video = new VideoCapture(0);
+            Video.Set(CapProp.FrameWidth, 1080);
+            Video.Set(CapProp.FrameHeight, 720);
+            Video.Set(CapProp.Exposure, -6);
+
+
             Application.Idle += GetFrame;
         }
 
