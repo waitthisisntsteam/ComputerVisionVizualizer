@@ -16,15 +16,11 @@ namespace ComputerVisionVizualizer.Controls
     {
         //public CvControlDisplayNameAttribute;
 
-        private static Dictionary<string, Mat> SavedImages;
-
         //public CVIOControlPropertyChangedEventArgs(string propertyName, T oldValue, T newValue)
 
         public CVIOBase()
         {
             InitializeComponent();
-
-            SavedImages = new();
         }
 
         private void CVIOBase_Load(object sender, EventArgs e)

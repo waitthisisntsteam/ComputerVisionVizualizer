@@ -109,7 +109,6 @@
             Controls.Add(Min1);
             Name = "InRangeOperation";
             Size = new Size(553, 348);
-            Load += InRangeOperation_Load;
             ResumeLayout(false);
         }
 

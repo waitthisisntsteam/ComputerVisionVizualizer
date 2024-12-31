@@ -16,6 +16,25 @@ namespace ComputerVisionVizualizer.Controls
         public InRangeOperation()
         {
             InitializeComponent();
+
+            Min1.SetName("Min B:");
+            Min2.SetName("Min G:");
+            Min3.SetName("Min R:");
+
+            Max1.SetName("Max H:");
+            Max2.SetName("Max S:");
+            Max3.SetName("Max V:");
+
+
+            Min1.SliderChanged += Convert;
+            Min2.SliderChanged += Convert;
+            Min3.SliderChanged += Convert;
+
+            Max1.SliderChanged += Convert;
+            Max2.SliderChanged += Convert;
+            Max3.SliderChanged += Convert;
+
+            InputImage.ImageSubmitted += Convert;
         }
 
         //private void Input(object sender, EventArgs e)
@@ -48,28 +67,6 @@ namespace ComputerVisionVizualizer.Controls
 
                 OutputImage.SetImage(output);
             }
-        }
-
-        private void InRangeOperation_Load(object sender, EventArgs e)
-        {
-            Min1.SetName("Min B:");
-            Min2.SetName("Min G:");
-            Min3.SetName("Min R:");
-
-            Max1.SetName("Max H:");
-            Max2.SetName("Max S:");
-            Max3.SetName("Max V:");
-
-
-            Min1.SliderChanged += Convert;
-            Min2.SliderChanged += Convert;
-            Min3.SliderChanged += Convert;
-
-            Max1.SliderChanged += Convert;
-            Max2.SliderChanged += Convert;
-            Max3.SliderChanged += Convert;
-
-            InputImage.ImageSubmitted += Convert;
         }
     }
 }

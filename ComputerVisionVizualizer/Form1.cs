@@ -5,6 +5,7 @@ using System.Reflection;
 
 namespace ComputerVisionVizualizer
 {
+
     public partial class CvVisualizer : Form
     {
         private void AddOperation<T>(T control) where T : CVIOBase
