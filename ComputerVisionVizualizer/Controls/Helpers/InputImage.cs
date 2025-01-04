@@ -11,13 +11,17 @@ using System.Windows.Forms;
 
 namespace ComputerVisionVizualizer.Controls.Helpers
 {
-    public partial class InputImage : UserControl
+    public partial class InputImage : ImageBase
     {
         public EventHandler ImageSubmitted;
 
         public InputImage()
         {
             InitializeComponent();
+
+            InputPictureSelector.DataSource = SavedImages.Keys.ToList();
+            InputPictureSelector.DisplayMember = SavedImages.Keys.ToString();
+            //InputPictureSelector.ValueMember = SavedImages.Values.ToString();
         }
 
         public IInputArray GetImage() => InputPictureBox.DisplayedImage;
@@ -36,7 +40,7 @@ namespace ComputerVisionVizualizer.Controls.Helpers
 
         private void InputPictureSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            ;
         }
     }
 }

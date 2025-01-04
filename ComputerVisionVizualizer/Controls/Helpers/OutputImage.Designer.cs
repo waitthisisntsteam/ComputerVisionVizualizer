@@ -51,6 +51,7 @@
             OutputPictureName.Size = new Size(100, 23);
             OutputPictureName.TabIndex = 3;
             OutputPictureName.TextChanged += OutputPictureName_TextChanged;
+            OutputPictureName.KeyPress += OutputPictureName_KeyPress;
             // 
             // OutputImage
             // 

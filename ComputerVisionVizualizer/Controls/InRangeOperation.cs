@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace ComputerVisionVizualizer.Controls
 {
+    [CvControlDisplayNameAttribute("InRange Operation")]
     public partial class InRangeOperation : CVIOBase
     {
         public InRangeOperation()

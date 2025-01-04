@@ -15,6 +15,7 @@ namespace ComputerVisionVizualizer.Controls
 {
     public partial class DilationErosion : CVIOBase
     {
+        [CvControlDisplayNameAttribute("Dilate/Erode")]
         public DilationErosion()
         {
             InitializeComponent();

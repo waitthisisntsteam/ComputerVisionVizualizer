@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ComputerVisionVizualizer.Controls
 {
-
+    [CvControlDisplayNameAttribute("Transformation")]
     public partial class Transformaion : CVIOBase
     {
         public Transformaion()

@@ -15,6 +15,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace ComputerVisionVizualizer.Controls
 {
+    [CvControlDisplayNameAttribute("Contours")]
     public partial class Contours : CVIOBase
     {
         public Contours()

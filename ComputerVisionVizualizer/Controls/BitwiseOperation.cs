@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace ComputerVisionVizualizer.Controls
 {
+    [CvControlDisplayNameAttribute("Bitwise Operation")]
     public partial class BitwiseOperation : CVIOBase
     {
         public BitwiseOperation()

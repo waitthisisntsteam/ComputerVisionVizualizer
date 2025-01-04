@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace ComputerVisionVizualizer.Controls
 {
+    [CvControlDisplayNameAttribute("Video Capture")]
     public partial class Camera : CVIOBase
     {
         private VideoCapture Video;

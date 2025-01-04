@@ -14,10 +14,6 @@ namespace ComputerVisionVizualizer.Controls
 {
     public partial class CVIOBase : UserControl
     {
-        //public CvControlDisplayNameAttribute;
-
-        //public CVIOControlPropertyChangedEventArgs(string propertyName, T oldValue, T newValue)
-
         public CVIOBase()
         {
             InitializeComponent();
@@ -26,6 +22,12 @@ namespace ComputerVisionVizualizer.Controls
         private void CVIOBase_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public class CvControlDisplayNameAttribute : Attribute
+        {
+            public string Name { get; }
+            public CvControlDisplayNameAttribute(string name) { Name = name; }
         }
     }
 }

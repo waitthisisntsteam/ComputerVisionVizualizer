@@ -27,8 +27,7 @@ namespace ComputerVisionVizualizer
             {
                 if (!cvControl.IsSubclassOf(typeof(CVIOBase))) continue;
 
-                //var button = new Button() { Text = cvControl.GetCustomAttribute<CVIOBase.CvControlDisplayNameAttribute>()?.Name ?? cvControl.Name, AutoSize = true };
-                Button button = new Button() { Text = "lol", AutoSize = true };
+                Button button = new Button() { Text = cvControl.GetCustomAttribute<CVIOBase.CvControlDisplayNameAttribute>()?.Name ?? cvControl.Name, AutoSize = true };
 
                 button.Click += (s, e) => AddOperation((CVIOBase)Activator.CreateInstance(cvControl));
 

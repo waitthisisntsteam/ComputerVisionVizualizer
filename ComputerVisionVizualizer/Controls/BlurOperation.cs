@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace ComputerVisionVizualizer.Controls
 {
+    [CvControlDisplayNameAttribute("Blur Operation")]
     public partial class BlurOperation : CVIOBase
     {
         public BlurOperation()

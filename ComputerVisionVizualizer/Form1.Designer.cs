@@ -56,10 +56,10 @@
             // tabs
             // 
             tabs.Controls.Add(tabPage1);
-            tabs.Location = new Point(93, 12);
+            tabs.Location = new Point(161, 12);
             tabs.Name = "tabs";
             tabs.SelectedIndex = 0;
-            tabs.Size = new Size(850, 520);
+            tabs.Size = new Size(782, 520);
             tabs.TabIndex = 0;
             // 
             // tabPage1
@@ -67,7 +67,7 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(842, 492);
+            tabPage1.Size = new Size(774, 492);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
@@ -100,7 +100,7 @@
             buttonList.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             buttonList.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             buttonList.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            buttonList.Size = new Size(77, 517);
+            buttonList.Size = new Size(145, 517);
             buttonList.TabIndex = 1;
             // 
             // TabName

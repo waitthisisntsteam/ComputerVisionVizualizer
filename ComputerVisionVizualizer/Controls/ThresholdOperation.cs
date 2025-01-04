@@ -13,6 +13,7 @@ using System.Windows.Forms;
 
 namespace ComputerVisionVizualizer.Controls
 {
+    [CvControlDisplayNameAttribute("Threshold Operation")]
     public partial class ThresholdOperation : CVIOBase
     {
         public ThresholdOperation()
